@@ -8,6 +8,5 @@
 	
 	$mm = new MonopolyManager($monopoly_config);
 	
-	print_r($mm->get_course_status($argv[4], $argv[5], $argv[6]));
-	print_r($mm->get_course_info($argv[4]));
+	// test ici
 ?>
