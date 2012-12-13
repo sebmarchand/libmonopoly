@@ -600,11 +600,19 @@
 		 * Soumet les cours enregistrés pour une modification officielle des choix de cours;
 		 * attention, l'étudiant a droit à un nombre maximal par session et cette méthode,
 		 * appelée à répétition, fera descendre le décompte.
+		 *
+		 * @return True si la requête a été effectuée avec succès.
 		 */
 		public function submit_registered_courses() {
 			$inputs = $this->prepare_inputs_for_rc_submit();
+			if (!$inputs) {
+				return false;
+			}
+
 			$ps = $this->build_post_string($inputs, 'value');
-			$this->curl_post(self::MODIFCOURS_URL, $ps);
+
+
+			return $this->curl_post(self::MODIFCOURS_URL, $ps) !== false;
 		}
 
 		/**
