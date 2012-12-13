@@ -352,14 +352,14 @@
 			$this->set_choixcours_raw_data();
 
 			$r_abbr = strtoupper($abbr);
-			$to_match = sprintf("/this\s*\[\s*\"%s\"\s*\]\s*=\s*\"([^\"]+)\"\s*;/i", $r_abbr);
+			$to_match = sprintf("/CO\s*\[\s*\"%s\"\s*\]\s*=\s*\"([^\"]+)\"\s*;/i", $r_abbr);
 			if (!preg_match($to_match, $this->_choixcours_raw_data, $m)) {
 				return NULL;
 			}
-			$cr = intval(substr($m[1], 2, 2));
-			$name_len = intval(substr($m[1], 7, 2));
-			$name = substr($m[1], 9, $name_len);
-			$type = substr($m[1], 4, 3);
+			$cr = intval(substr($m[1], 3, 2));
+			$name_len = intval(substr($m[1], 12, 2));
+			$name = substr($m[1], 14, $name_len);
+			$type = substr($m[1], 9, 3);
 			$is_final_proj = (substr($m[1], 1, 1) == 'O');
 			$is_int = (substr($m[1], 0, 1) == 'O');
 
