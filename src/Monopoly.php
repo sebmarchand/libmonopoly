@@ -19,6 +19,13 @@
 			$this->pwd = $pwd;
 			$this->nais = $nais;
 		}
+
+		/**
+		 * Représentation textuelle.
+		 */
+		public function __toString() {
+			return "MonopolyConfig(code = $this->code)";
+		}
 	}
 
 	/**
@@ -31,6 +38,13 @@
 		public $sched;		// Horaire
 		public $type;		// Type (théorique ou laboratoire)
 		public $gr;		// Numéro de groupe
+
+		/**
+		 * Représentation textuelle.
+		 */
+		public function __toString() {
+			return "MonopolyCourseStatus(abbr = $this->abbr)";
+		}
 	}
 
 	/**
@@ -42,6 +56,13 @@
 		public $is_final_project;	// Vrai si est un projet final
 		public $is_internship;		// Vrai si est un stage
 		public $available_types;	// Tableau de types de cours disponibles
+
+		/**
+		 * Représentation textuelle.
+		 */
+		public function __toString() {
+			return "MonopolyCourseInfo(name = $this->name)";
+		}
 	}
 
 	/**
@@ -61,6 +82,13 @@
 		public $abbr;		// Sigle
 		public $gr_theo;	// Numéro de groupe théorique
 		public $gr_lab;		// Numéro de groupe de laboratoire (NULL si aucun)
+
+		/**
+		 * Représentation textuelle.
+		 */
+		public function __toString() {
+			return "MonopolyCourse(abbr = $this->abbr, gr_theo = $this->gr_theo, gr_lab = $this->gr_lab)";
+		}
 	}
 
 	/**
