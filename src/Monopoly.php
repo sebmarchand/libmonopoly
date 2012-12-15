@@ -315,7 +315,7 @@
 			$r_gr = str_pad($gr, 2, "0", STR_PAD_LEFT);
 			$r_abbr = strtoupper($abbr);
 			$r_type = strtoupper($type);
-			$to_match = sprintf("/this\s*\[\s*\"%s%s%s\"\s*\]\s*=\s*\"([^\"]+)\"\s*;/i", $r_abbr, $r_gr, $type);
+			$to_match = sprintf("/GC\s*\[\s*\"%s%s%s\"\s*\]\s*=\s*\"([^\"]+)\"\s*;/i", $r_abbr, $r_gr, $type);
 			if (!preg_match($to_match, $this->_choixcours_raw_data, $m)) {
 				return NULL;
 			}
